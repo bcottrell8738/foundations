@@ -38,6 +38,8 @@ impl LoggerWithKvNestingTracking {
     // logger with a child of itself.
     pub(crate) fn inc_nesting_level(&mut self) {
         self.nesting_level += 1;
+        println!("XXXTAMINO Nesting: {}", self.nesting_level);
+        println!("XXXTAMINO Kv: {:?}", self.inner.list());
 
         assert!(
             self.nesting_level < Self::MAX_NESTING,
